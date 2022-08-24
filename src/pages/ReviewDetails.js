@@ -13,13 +13,15 @@ export default function ReviewDetails(e) {
   const [data, setData] = useState({});
   useEffect(() => {
     axios
-      .get('http://starpy-backend.herokuapp.com/api/restaurents/'+44+'?populate=*')
+      .get('http://starpy-backend.herokuapp.com/api/restaurents/'+id+'?populate=*')
       .then(({ data }) => {
         console.log(data)
         setData(data.data.attributes)
       })
       .catch((error) => console.log(error))
   }, [])
+
+  
 
   
   return (
@@ -33,3 +35,6 @@ export default function ReviewDetails(e) {
     </div>
   )
 }
+
+
+
