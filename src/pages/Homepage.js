@@ -3,7 +3,7 @@ import useFetch from '../hooks/useFetch'
 import { Link } from 'react-router-dom'
 
 export default  function Homepage() {
-  const { loading, error, data } = useFetch('http://starpy-backend.herokuapp.com/api/restaurents?populate=*')
+  const { loading, error, data } = useFetch('https://starpy-backend.herokuapp.com/api/restaurents?populate=*&sort=createdAt:DESC')
 
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error :(</p>

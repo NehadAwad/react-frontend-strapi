@@ -8,24 +8,12 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 export default function ReviewDetails(e) {
-  // let { id } = useParams();
-  // const [data, setData] = useState('');
-  // // const { loading, error, data } = useFetch('http://starpy-backend.herokuapp.com/api/restaurents/'+2)
-  // useEffect(() => {
-  //   fetch('http://starpy-backend.herokuapp.com/api/restaurents/'+id)
-  //    .then((response) => response.json())
-  //    .then((actualData) => setData(actualData))
-  //    .catch((err) => {
-  //     console.log(err.message);
-  //    });
-  //  }, []);
 
-  // console.log(data.data.attributes.title)
   let { id } = useParams();
   const [data, setData] = useState({});
   useEffect(() => {
     axios
-      .get('http://starpy-backend.herokuapp.com/api/restaurents/'+id+'?populate=*')
+      .get('http://starpy-backend.herokuapp.com/api/restaurents/'+44+'?populate=*')
       .then(({ data }) => {
         console.log(data)
         setData(data.data.attributes)
